@@ -513,6 +513,8 @@ string ZLFileSystem::NormalizeFilePath ( const char* path ) {
 		buffer [ top++ ] = buffer [ i ];
 	}
 	
+	// HACK-BEN: you don't need to null this character (which is beyond the buffer's length), as null will be added
+	//  automatically during copy construction.
 	//buffer [ top ] = 0;
 	string result = buffer.c_str ();
 
